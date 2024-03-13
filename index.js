@@ -9,11 +9,11 @@ let btnScore = document.getElementById('button1');
 let dynamic = document.getElementById('dynamic');
 // console.log(country, score);
 
-let data=[];
+let data = [];
 
-btnScore.addEventListener('click', function(e){
-    let div1 = document.createElement('div');
-    let newData ={
+btnScore.addEventListener('click', function (e) {
+
+    let newData = {
         firstName: firstName.value,
         lastName: lastName.value,
         country: country.value,
@@ -21,54 +21,62 @@ btnScore.addEventListener('click', function(e){
     };
 
     data.push(newData);
-   
-    
+
+
     data.sort((a, b) => b.score - a.score);
 
-    
+
     dataFetch()
 })
 
 
-function dataFetch (){
-    dynamic.innerHTML = ''; // Clear previous table
+function dataFetch() {
+    dynamic.innerHTML = '';
 
     let table = document.createElement('table');
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
 
-    // Table headers
-    thead.innerHTML = `
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Country</th>
-            <th>Score</th>
-            <th>Action</th>
-        </tr>
-    `;
 
-    // Table rows
+    thead.innerHTML = `
+    <tr>
+        <th class="header-cell">First Name</th>
+        <th class="header-cell">Last Name</th>
+        <th class="header-cell">Country</th>
+        <th class="header-cell">Score</th>
+        <th class="header-cell">Action</th>
+    </tr>
+`;
+
+
     data.forEach(rowData => {
         let row = document.createElement('tr');
         row.innerHTML = `
-            <td>${rowData.firstName}</td>
-            <td>${rowData.lastName}</td>
-            <td>${rowData.country}</td>
-            <td>${rowData.score}</td>
-            <td><button onclick="handleDelete(this)">delete</button></td>
-            <td><button onclick="handlePlus(this)">+</button></td>
-            <td><button onclick="handleminus(this)">-</button></td>
-        `;
+        <td class="data-cell">${rowData.firstName}</td>
+        <td class="data-cell">${rowData.lastName}</td>
+        <td class="data-cell">${rowData.country}</td>
+        <td class="data-cell">${rowData.score}</td>
+        <td class="action-cell">
+            <button class="delete-btn" onclick="handleDelete(this)">Delete</button>
+            <button class="plus-btn" onclick="handlePlus(this)">+</button>
+            <button class="minus-btn" onclick="handleMinus(this)">-</button>
+        </td>
+    `;
         tbody.appendChild(row);
     });
 
+
+    table.classList.add('data-table');
+    thead.classList.add('table-header');
+    tbody.classList.add('table-body');
+
     table.appendChild(thead);
     table.appendChild(tbody);
+
     dynamic.appendChild(table);
 }
 
-function handlePlus(button){
+function handlePlus(button) {
     let row = button.parentElement.parentElement;
     let index = Array.from(row.parentElement.children).indexOf(row);
     console.log(data[index].score);
@@ -77,15 +85,15 @@ function handlePlus(button){
     dataFetch();
 }
 
-function handleminus(button){
+function handleMinus(button) {
     let row = button.parentElement.parentElement;
     let index = Array.from(row.parentElement.children).indexOf(row);
-   if(data[index].score > 5){
-    data[index].score = parseInt(data[index].score) - 5;
-   }
+    if (data[index].score > 5) {
+        data[index].score = parseInt(data[index].score) - 5;
+    }
     dataFetch();
 }
-function handleDelete(button){
+function handleDelete(button) {
     let row = button.parentElement.parentElement;
     let index = Array.from(row.parentElement.children).indexOf(row);
     data.splice(index, 1);

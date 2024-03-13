@@ -12,44 +12,120 @@
     /* justify-content: center; */
     /* margin-top: 50px; */
     width: 100%;
-    height: 100vh;
-    background-color: rgb(255, 255, 255);
+    min-height: 100vh;
+    background: linear-gradient(rgb(255 225 209),rgb(249 159 159));
+    
 }
 .static{
     display: flex;
     gap: 20px;
+    justify-content: center;
+    width: 80vw;
+    height: 10vh;
+}
+.static input {
+    display: flex;
+    width: 10vw;
+    /* border: 2px solid red; */
+    height: 5vh;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 0.75rem; */
+    background-color: darkgray;
+    color: black;
+    font-size: 15px;
+    /* font-weight: bold; */
+}
+h1{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.static button{
+    display: flex; 
+/* border: 2px solid red; */
+height: 5vh;
+margin-top: 30px;
+align-items: center;
+width: 10vw;
+
+justify-content: center;
+border-radius: 0.75rem;
+background-color: darkgray;
+color: black;
+}
+
+.static button:hover{
+    background-color: #66cc00;
+    cursor: pointer;
+}
+
+/* Table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(29, 131, 154);
+}
+
+/* Table header */
+.table-header {
+    background-color: #f2f2f2;
+}
+
+/* Table cells */
+.data-cell {
+    padding: 8px;
+    text-align: center;
+    font-size: 22px;
+    border: 1px solid #ddd;
+}
+
+/* Action cell */
+.action-cell {
+    text-align: center;
+}
+.header-cell{
+    padding: 8px;
+    text-align: center;
+    font-size: 22px;
+    border: 1px solid #ddd;
+}
+/* Action buttons */
+.delete-btn,
+.plus-btn,
+.minus-btn {
+    padding: 5px 10px;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #ff3333;
+    color: white;
+}
+
+.plus-btn {
+    background-color: #66cc00;
+    color: white;
+}
+
+.minus-btn {
+    background-color: #ff9933;
+    color: white;
 }
 
 
 
-/* styles.module.css */
-.table {
-    /* Styles for the table element */
-    border-collapse: collapse;
-    width: 100%; /* Adjust width as needed */
-    margin: 20px auto;
+  #dynamic{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    margin-top: 50px;
+    /* background-color: red; */
+    width: 70vw;
+    height: 50vh;
   }
-  
-  .table th,
-  .table td {
-    /* Styles for table headers and cells */
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .table th {
-    /* Styles for table headers */
-    background-color: #f2f2f2;
-  }
-  
-  .delete-button {
-    /* Styles for the delete button */
-    background-color: #ccc;
-    border: none;
-    color: white;
-    padding: 5px 8px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
