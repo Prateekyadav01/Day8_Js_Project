@@ -31,7 +31,8 @@ btnScore.addEventListener('click', function (e) {
 
 
 function dataFetch() {
-    dynamic.innerHTML = '';
+    if(data.length > 0){
+        dynamic.innerHTML = '';
 
     let table = document.createElement('table');
     let thead = document.createElement('thead');
@@ -74,6 +75,8 @@ function dataFetch() {
     table.appendChild(tbody);
 
     dynamic.appendChild(table);
+
+    }
 }
 
 function handlePlus(button) {
