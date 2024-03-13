@@ -19,3 +19,37 @@
     display: flex;
     gap: 20px;
 }
+
+
+
+/* styles.module.css */
+.table {
+    /* Styles for the table element */
+    border-collapse: collapse;
+    width: 100%; /* Adjust width as needed */
+    margin: 20px auto;
+  }
+  
+  .table th,
+  .table td {
+    /* Styles for table headers and cells */
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    /* Styles for table headers */
+    background-color: #f2f2f2;
+  }
+  
+  .delete-button {
+    /* Styles for the delete button */
+    background-color: #ccc;
+    border: none;
+    color: white;
+    padding: 5px 8px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
